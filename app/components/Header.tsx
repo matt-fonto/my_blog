@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <div className="flex flex-col items-center text-center gap-6">
+    <div className="flex flex-col items-center text-center gap-6 min-h-[30vh] bg-primary">
       {/* <img
           src="/avatar.png" // replace with your image path
           alt="Mateus Fontoura"

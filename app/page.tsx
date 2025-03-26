@@ -7,19 +7,23 @@ export default async function Home() {
   // const categories = ["frontend", "backend", "devops", "career", "os"];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-primary-foreground">
       <Header />
 
-      {/* Featured */}
-      <div>
-        <h2>Featured posts</h2>
+      <div className="max-w-6xl mx-auto">
+        {/* Featured */}
+        <div>
+          <h2>Featured posts</h2>
 
-        {posts.map((post) => (
-          <BlogPostCard key={post.id} post={post} />
-        ))}
+          <div className="grid grid-cols-3 gap-2">
+            {posts.map((post) => (
+              <BlogPostCard key={post.id} post={post} />
+            ))}
+          </div>
+        </div>
+
+        <h2>All posts: organize per category?</h2>
       </div>
-
-      <h2>All posts: organize per category?</h2>
     </div>
   );
 }
