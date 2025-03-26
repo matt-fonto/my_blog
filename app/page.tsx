@@ -1,6 +1,7 @@
-import { getPosts } from "./actions/getPosts";
-import { BlogPostCard } from "./components/BlogPostCard";
-import { Header } from "./components/Header";
+import { getPosts } from "@/actions/getPosts";
+import { BlogPostCard } from "../components/custom/BlogPostCard";
+import { Header } from "../components/custom/Header";
+import { Navbar } from "@/components/custom/Navbar";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -8,6 +9,8 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-primary-foreground">
+      <Navbar />
+
       <Header />
 
       <div className="max-w-6xl mx-auto">

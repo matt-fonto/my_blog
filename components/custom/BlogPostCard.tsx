@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { BlogPost } from "../types";
+import { BlogPost } from "../../types";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import image from "../public/template_img.jpg";
+import image from "@/public/template_img.jpg";
 
 export function BlogPostCard({ post }: { post: BlogPost }) {
   return (
