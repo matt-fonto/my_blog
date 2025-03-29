@@ -3,42 +3,39 @@ import { BlogPost } from "../../types";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import image from "@/public/template_img.jpg";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Typography } from "./Typography";
 
 export function BlogPostCard({ post }: { post: BlogPost }) {
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm border-none shadow-sm p-0 bg-primary-foreground">
       <div className="relative h-48 w-full rounded-t-md overflow-hidden">
         <Image src={image} alt={post.title} fill className="object-cover" />
-        <Badge className="absolute top-2 left-2 bg-yellow-400 text-black hover:bg-yellow-400">
+        <Badge className="absolute top-2 left-2 bg-secondary text-secondary-foreground hover:bg-secondary">
           Tag
         </Badge>
       </div>
 
-      <CardContent className="p-4 flex flex-col gap-2">
-        <p className="text-xs text-muted-foreground">
-          to add date
-          {/* {new Date(post.date).toLocaleDateString("en-US", {
-            month: "short",
-            day: "2-digit",
-            year: "numeric",
-          })} */}
-        </p>
+      <CardContent className="flex flex-col gap-2 mb-6">
+        <Typography variant="span">Dec. 23, 2025</Typography>
 
-        <h3 className="text-lg font-semibold">{post.title}</h3>
-        <p className="text-sm text-muted-foreground line-clamp-2">
-          Lorem ipsum
-        </p>
+        <Typography variant="h4">{post.title}</Typography>
+        <Typography>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+          voluptatibus voluptatum. Quisquam, voluptatibus voluptatum. Quisquam,
+          voluptatibus voluptatum.
+        </Typography>
 
-        <div className="flex items-center justify-between mt-2 bg-primary">
+        <div className="flex items-center justify-between mt-2">
           <div className="flex items-center gap-2">
-            <Image
-              src={image}
-              alt="author"
-              width={20}
-              height={20}
-              className="rounded-full"
-            />
-            <span className="text-sm font-medium">Author name</span>
+            <Avatar>
+              <AvatarImage src={image.src ?? ""} />
+              <AvatarFallback>Mateus</AvatarFallback>
+            </Avatar>
+
+            <Typography variant="span" className="text-primary font-bold">
+              Author name
+            </Typography>
           </div>
         </div>
       </CardContent>
