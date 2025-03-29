@@ -1,0 +1,1 @@
+export const DEFAULT_NUM_POSTS_PER_PAGE = 9;

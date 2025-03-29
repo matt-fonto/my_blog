@@ -7,7 +7,12 @@ export function Navbar() {
     <header className="w-full border-b bg-background">
       <div className="max-w-6xl mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center gap-2">
-          <Image src="/logo.svg" alt="Mateus Fontoura" width="40" height="40" />
+          <Image
+            src="/logo_clear.svg"
+            alt="Mateus Fontoura"
+            width="40"
+            height="40"
+          />
           <Typography variant="h4" className="text-primary-foreground">
             Strappazzon
           </Typography>

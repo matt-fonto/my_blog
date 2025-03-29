@@ -1,9 +1,9 @@
 import { getPosts } from "@/actions/getPosts";
 import { BlogPostCard } from "../components/custom/BlogPostCard";
 import { Header } from "../components/custom/Header";
-import { Navbar } from "@/components/custom/Navbar";
 import { Typography } from "@/components/custom/Typography";
 import { BookOpen } from "lucide-react";
+import { Pagination } from "@/components/custom/Pagination";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -11,7 +11,6 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-primary-foreground">
-      <Navbar />
       <Header />
 
       <div className="max-w-6xl mx-auto">
@@ -31,6 +30,8 @@ export default async function Home() {
 
         <h2>All posts: organize per category?</h2>
       </div>
+
+      <Pagination />
     </div>
   );
 }
