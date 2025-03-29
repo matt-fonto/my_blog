@@ -31,7 +31,7 @@ export default async function Home() {
         <h2>All posts: organize per category?</h2>
       </div>
 
-      <Pagination />
+      <Pagination disablePrevious />
     </div>
   );
 }
