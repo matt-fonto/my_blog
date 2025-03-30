@@ -4,12 +4,10 @@ import { Icon } from "./Icon";
 export function Header() {
   return (
     <div className="relative w-full min-h-[50vh] overflow-hidden">
-      {/* Background image */}
       <Image src="/bg.jpg" alt="" fill className="object-cover z-0" />
 
       <div className="absolute inset-0 bg-black/20 z-10" />
 
-      {/* Content */}
       <div className="relative z-20 flex flex-col items-center text-center gap-6 h-full min-h-[50vh] justify-center">
         <Icon className="text-white" />
         <h1 className="text-4xl font-bold tracking-tight text-primary-foreground">

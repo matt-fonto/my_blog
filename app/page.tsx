@@ -4,17 +4,16 @@ import { Header } from "../components/custom/Header";
 import { Typography } from "@/components/custom/Typography";
 import { BookOpen } from "lucide-react";
 import { Pagination } from "@/components/custom/Pagination";
+import { Container } from "@/components/custom/Container";
 
 export default async function Home() {
   const posts = await getPosts();
-  // const categories = ["frontend", "backend", "devops", "career", "os"];
 
   return (
     <div className="min-h-screen flex flex-col bg-primary-foreground">
       <Header />
 
-      <div className="max-w-6xl mx-auto">
-        {/* Featured */}
+      <Container>
         <div className="py-10">
           <Typography variant="h5" className="py-6">
             <BookOpen />
@@ -27,11 +26,9 @@ export default async function Home() {
             ))}
           </div>
         </div>
+      </Container>
 
-        <h2>All posts: organize per category?</h2>
-      </div>
-
-      <Pagination disablePrevious />
+      <Pagination page={1} totalPages={1} sendToBlog />
     </div>
   );
 }

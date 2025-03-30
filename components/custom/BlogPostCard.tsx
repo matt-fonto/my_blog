@@ -20,7 +20,7 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
         <Typography variant="span">Dec. 23, 2025</Typography>
 
         <Typography variant="h4">{post.title}</Typography>
-        <Typography>
+        <Typography variant="span">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
           voluptatibus voluptatum. Quisquam, voluptatibus voluptatum. Quisquam,
           voluptatibus voluptatum.

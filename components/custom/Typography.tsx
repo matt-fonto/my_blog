@@ -19,7 +19,7 @@ export function Typography({
     h5: "text-lg font-bold",
     h6: "text-base font-bold",
     p: "text-base",
-    span: "text-sm text-gray-800 font-semibold",
+    span: "text-sm text-gray-800",
   };
 
   const variantClass = variants[variant];
