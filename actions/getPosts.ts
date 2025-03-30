@@ -14,3 +14,12 @@ export async function getPosts(
 
   return posts;
 }
+
+export async function getPost(slug: string): Promise<BlogPost> {
+  const result = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${slug}`
+  );
+  const post = await result.json();
+
+  return post;
+}

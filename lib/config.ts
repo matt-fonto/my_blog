@@ -6,7 +6,7 @@ export const LOGO_BRIGHT = "/logo_clear.svg";
 export const LOGO_PURPLE = "/logo_clear.svg";
 export const BRAND_DESCRIPTION = "This is a description of the brand.";
 
-export const LINKS = [{ href: "/blog/posts", title: "Blog" }] as const;
+export const LINKS = [{ href: "/blog", title: "Blog" }] as const;
 
 export const SKILLS = [
   {

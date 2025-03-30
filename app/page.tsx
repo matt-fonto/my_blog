@@ -7,6 +7,8 @@ import { Container } from "@/components/custom/Container";
 import { About } from "@/components/custom/About";
 import { Contact } from "@/components/custom/Contact";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -19,11 +21,17 @@ export default async function Home() {
       />
 
       <Container>
-        <div className="py-12">
-          <Typography variant="h5" className="py-6">
-            <BookOpen />
-            Featured Posts
-          </Typography>
+        <div className="py-12 flex flex-col">
+          <div className="w-full flex justify-between py-6 items-center">
+            <Typography variant="h5">
+              <BookOpen />
+              Featured Posts
+            </Typography>
+
+            <Button className="w-fit flex">
+              <Link href="/blog">See more</Link>
+            </Button>
+          </div>
 
           <div className="grid grid-cols-3 gap-2">
             {posts.slice(0, 3).map((post) => (
