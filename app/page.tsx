@@ -3,8 +3,10 @@ import { BlogPostCard } from "../components/custom/BlogPostCard";
 import { Header } from "../components/custom/Header";
 import { Typography } from "@/components/custom/Typography";
 import { BookOpen } from "lucide-react";
-import { Pagination } from "@/components/custom/Pagination";
 import { Container } from "@/components/custom/Container";
+import { About } from "@/components/custom/About";
+import { Contact } from "@/components/custom/Contact";
+import { Separator } from "@/components/ui/separator";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -17,21 +19,24 @@ export default async function Home() {
       />
 
       <Container>
-        <div className="py-10">
+        <div className="py-12">
           <Typography variant="h5" className="py-6">
             <BookOpen />
             Featured Posts
           </Typography>
 
           <div className="grid grid-cols-3 gap-2">
-            {posts.map((post) => (
+            {posts.slice(0, 3).map((post) => (
               <BlogPostCard key={post.id} post={post} />
             ))}
           </div>
         </div>
-      </Container>
 
-      <Pagination page={1} totalPages={1} sendToBlog />
+        <Separator className="bg-secondary-foreground" />
+        <About />
+        <Separator className="bg-secondary-foreground" />
+        <Contact />
+      </Container>
     </div>
   );
 }

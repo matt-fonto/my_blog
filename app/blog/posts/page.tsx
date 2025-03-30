@@ -15,20 +15,16 @@ type BlogPostPageParams = {
 export default async function BlogPostsPage({
   searchParams,
 }: BlogPostPageParams) {
-  const page = Number(searchParams.page);
-  const posts = await getPosts(page);
+  const { page } = await searchParams;
+  const posts = await getPosts(Number(page));
 
   return (
     <div>
-      <h2>blog</h2>
-      <h2>breadcrumb</h2>
-
       <Header
         isBlogPage
         title="Lorem ipsum"
         description="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus."
       />
-      <h2>search bar</h2>
       <h2>categories</h2>
 
       <Container>
@@ -46,7 +42,7 @@ export default async function BlogPostsPage({
         </div>
       </Container>
 
-      <Pagination page={page} totalPages={3} />
+      <Pagination page={Number(page)} totalPages={3} />
     </div>
   );
 }

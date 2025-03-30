@@ -1,13 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Typography } from "./Typography";
-import { AUTHOR_NAME, BRAND_NAME, LOGO_BRIGHT } from "@/lib/config";
-
-const links = [
-  { href: "/blog/posts", title: "Blog" },
-  { href: "/about", title: "About" },
-  { href: "/contact", title: "Contact" },
-];
+import { AUTHOR_NAME, BRAND_NAME, LINKS, LOGO_BRIGHT } from "@/lib/config";
 
 export function Navbar() {
   return (
@@ -21,7 +15,7 @@ export function Navbar() {
         </Link>
 
         <nav className="flex items-center gap-6 text-sm text-primary-foreground">
-          {links.map((link) => (
+          {LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
