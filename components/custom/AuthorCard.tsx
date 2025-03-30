@@ -15,6 +15,8 @@ export function AuthorCard() {
         <Typography variant="span" className="text-primary font-bold">
           {AUTHOR_NAME}
         </Typography>
+
+        <h2>social media links</h2>
       </div>
     </div>
   );

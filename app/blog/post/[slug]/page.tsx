@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Typography } from "@/components/custom/Typography";
 import { BRAND_NAME } from "@/lib/config";
 import { AuthorCard } from "@/components/custom/AuthorCard";
+import { ArrowLeft, Share2 } from "lucide-react";
 
 type PostPageParams = {
   params: { slug: string };
@@ -18,31 +19,38 @@ export default async function PostPage({ params }: PostPageParams) {
   }
 
   return (
-    <article className="max-w-6xl mx-auto py-16 px-4 space-y-6 min-h-screen flex flex-col">
-      <nav className="text-sm font-semibold text-primary mb-2 py-4 flex gap-2">
-        <Link href="/" className="hover:underline">
-          {BRAND_NAME}
-        </Link>
-        {" / "}
-        <Link href="/blog" className="hover:underline">
-          Blog
-        </Link>
-        {" / "}
+    <main className="relative">
+      <article className="max-w-6xl mx-auto py-16 px-4 space-y-6 min-h-screen flex flex-col">
+        <nav className="text-sm font-semibold text-primary mb-2 py-4 flex gap-2">
+          <Link href="/" className="hover:underline">
+            {BRAND_NAME}
+          </Link>
+          {" / "}
+          <Link href="/blog" className="hover:underline">
+            Blog
+          </Link>
+          {" / "}
 
-        <Typography variant="span" className="text-primary">
+          <Typography variant="span" className="text-primary">
+            {post.title}
+          </Typography>
+        </nav>
+
+        <Typography variant="h1" className="text-balance">
           {post.title}
         </Typography>
-      </nav>
 
-      <Typography variant="h1" className="text-balance">
-        {post.title}
-      </Typography>
+        <Typography variant="h3" className="text-xl text-muted-foreground">
+          Lorem Ipsum dolor sit amet
+        </Typography>
 
-      <Typography variant="h3" className="text-xl text-muted-foreground">
-        Lorem Ipsum dolor sit amet
-      </Typography>
+        <AuthorCard />
+      </article>
 
-      <AuthorCard />
-    </article>
+      <div className="fixed left-4 top-32 justify-center flex items-center flex-col text-gray-400 gap-4">
+        <ArrowLeft />
+        <Share2 />
+      </div>
+    </main>
   );
 }
