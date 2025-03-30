@@ -11,7 +11,10 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-primary-foreground">
-      <Header />
+      <Header
+        title="Lorem ipsum"
+        description="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus."
+      />
 
       <Container>
         <div className="py-10">

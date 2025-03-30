@@ -1,6 +1,7 @@
 import { getPosts } from "@/actions/getPosts";
 import { BlogPostCard } from "@/components/custom/BlogPostCard";
 import { Container } from "@/components/custom/Container";
+import { Header } from "@/components/custom/Header";
 import { Pagination } from "@/components/custom/Pagination";
 import { Typography } from "@/components/custom/Typography";
 import { BookOpen } from "lucide-react";
@@ -21,6 +22,12 @@ export default async function BlogPostsPage({
     <div>
       <h2>blog</h2>
       <h2>breadcrumb</h2>
+
+      <Header
+        isBlogPage
+        title="Lorem ipsum"
+        description="Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatibus."
+      />
       <h2>search bar</h2>
       <h2>categories</h2>
 

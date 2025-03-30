@@ -34,7 +34,7 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
             </Avatar>
 
             <Typography variant="span" className="text-primary font-bold">
-              Author name
+              Mateus Strappazzon
             </Typography>
           </div>
         </div>
