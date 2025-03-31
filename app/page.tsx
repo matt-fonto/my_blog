@@ -10,6 +10,8 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+// https://bejamas.com/hub/guides/how-to-create-next-js-blog-using-notion-as-a-cms
+
 export default async function Home() {
   const posts = await getPosts();
 
